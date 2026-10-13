@@ -13,7 +13,7 @@
                 <KsDropdown trigger="click" placement="bottom-end">
                     <KsButton :icon="DotsVertical" link class="tab-icon" :aria-label="$t('playground actions')" />
                     <template #dropdown>
-                        <KsDropdownMenu class="m-2">
+                        <KsDropdownMenu class="menu">
                             <KsDropdownItem :icon="Backspace" @click="playgroundStore.clearExecutions()">
                                 <span class="small-text">{{ $t('playground.clear_history') }}</span>
                             </KsDropdownItem>
@@ -80,7 +80,7 @@
         >
             <KsForm labelPosition="top">
                 <KsFormItem :label="$t('inputs')">
-                    <div class="w-100">
+                    <div class="flow-run-wrapper">
                         <FlowRun 
                             ref="playgroundFlowRunRef" 
                             :embed="true" 
@@ -336,5 +336,13 @@
                 color: var(--ks-text-primary);
             }
         }
+    }
+
+    .menu {
+        margin: var(--ks-spacing-2);
+    }
+
+    .flow-run-wrapper {
+        width: 100%;
     }
 </style>
